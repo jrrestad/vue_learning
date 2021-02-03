@@ -2,6 +2,9 @@ const app = Vue.createApp({
   data() {
     return {
       counter: 0,
+      title: '',
+      firstname: '',
+      lastname: '',
       name: '',
     };
   },
@@ -16,8 +19,18 @@ const app = Vue.createApp({
         this.counter = 0
       }
     },
-    setName(e) {
-      this.name = e.target.value;
+    setName(e, name) {
+      if (this.firstname == "" && this.lastname != "") {
+        this.title = 'Mr./Mrs.'
+      } else {
+        this.title = ''
+      }
+      if (name == "firstname") {
+        this.firstname = e.target.value
+      } else  if (name == "lastname") {
+        this.lastname = e.target.value
+      }
+      this.name = this.firstname + `${this.title} ` + this.lastname
     },
   }
 });
