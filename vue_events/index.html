@@ -20,13 +20,14 @@
       <h2>Events in Action</h2>
       <button v-on:click="add(3)">Add 3</button>
       <button v-on:click="reduce(2)">Remove 2</button>
+      <p v-once>Start: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
       <label for="">First name:</label>
       <input type="text" placeholder="optional" v-on:input="setName($event, 'firstname')">
       <br>
       <label for="">Last name</label>
       <input type="text" v-on:input="setName($event, 'lastname')">
-      <p>Hello {{ name }}!</p>
+      <p>Hello {{ confirm }}!</p>
       <form v-on:submit.prevent="submitForm">
         <button>Register</button>
       </form>
