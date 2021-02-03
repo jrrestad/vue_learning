@@ -27,6 +27,9 @@
       <label for="">Last name</label>
       <input type="text" v-on:input="setName($event, 'lastname')">
       <p>Hello {{ name }}!</p>
+      <form v-on:submit.prevent="submitForm">
+        <button>Register</button>
+      </form>
     </section>
   </body>
 </html>
